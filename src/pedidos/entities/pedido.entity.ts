@@ -1,5 +1,6 @@
 import { Column, DeleteDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
+@Entity()
 export class Pedido {
 
     @PrimaryGeneratedColumn()

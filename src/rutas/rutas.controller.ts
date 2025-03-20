@@ -9,22 +9,22 @@ export class RutasController {
 
   @Post()
   create(@Body() createRutaDto: CreateRutaDto) {
-    return this.rutasService.create(createRutaDto);
+    return this.rutasService.createRuta(createRutaDto);
   }
 
   @Get()
   findAll() {
-    return this.rutasService.findAll();
+    return this.rutasService.getAllRutas();
   }
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.rutasService.findOne(+id);
+    return this.rutasService.getRutaById(+id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updateRutaDto: UpdateRutaDto) {
-    return this.rutasService.update(+id, updateRutaDto);
+    return this.rutasService.update(+id);
   }
 
   @Delete(':id')

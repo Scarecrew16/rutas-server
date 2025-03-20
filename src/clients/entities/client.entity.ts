@@ -1,22 +1,23 @@
 import {Column, DeleteDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
 
+@Entity()
 export class Client {
         // Identificador del usuario
         @PrimaryGeneratedColumn()
         id: number;
         // Nombre del usuario
-        @Column({length: 500})
+        @Column({length: 500, nullable: false})
         name: string;
         // Email del usuario
-        @Column({unique: true, nullable: false})
-        userName: string;
-    
-        @Column({nullable:false})
-        password: string;
+        @Column()
+        address: string;
     
         @Column()
-        role: string;
-    
+        phone:number
+
+        @Column()
+        comments:string
+
         @DeleteDateColumn()
         deletedAt: Date;
 }

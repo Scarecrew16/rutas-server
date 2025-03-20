@@ -24,7 +24,7 @@ export class PedidosController {
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updatePedidoDto: UpdatePedidoDto) {
-    return this.pedidosService.update(+id);
+    // return this.pedidosService.update(+id);
   }
 
   @Delete(':id')

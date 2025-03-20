@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { ConflictException, Injectable } from '@nestjs/common';
 import { CreatePedidoDto } from './dto/create-pedido.dto';
 import { UpdatePedidoDto } from './dto/update-pedido.dto';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -27,9 +27,9 @@ export class PedidosService {
     return await this.pedidosRepository.findOneBy({id});
   }
 
-  async update(id:number){
-    return await this.pedidosRepository.update(id, UpdatePedidoDto)
-  }
+  /*async update(id:number){
+    return await this.pedidosRepository.update(id, UpdatePedidoDto);
+  }*/
 
   async remove(id:number){
     return await this.pedidosRepository.softDelete(id);
