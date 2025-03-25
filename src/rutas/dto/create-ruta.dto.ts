@@ -1,15 +1,15 @@
-import { IsPositive, IsEmail, IsNotEmpty, IsOptional } from "class-validator";
+import { IsPositive, IsNotEmpty, IsOptional, IsBoolean } from "class-validator";
 
 export class CreateRutaDto {
 
     @IsPositive()
     @IsOptional()
-    id?: number
+    id: number
 
     @IsNotEmpty()
     name:string
 
-    @IsOptional()
+    @IsBoolean()
     status: string
 
     @IsOptional()

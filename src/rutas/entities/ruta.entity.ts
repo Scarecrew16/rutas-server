@@ -9,7 +9,7 @@ export class Ruta {
     name: string;
 
     @Column()
-    status: boolean;
+    status: Boolean;
 
     @Column()
     user: string;
