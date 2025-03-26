@@ -1,4 +1,5 @@
-import { Column, DeleteDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { User } from "src/users/entities/user.entity";
+import { Column, DeleteDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class Ruta {
@@ -11,7 +12,10 @@ export class Ruta {
     @Column()
     status: Boolean;
 
-    @Column()
-    user: string;
-
+    @OneToOne(
+        ()=> User,
+        (user:User) => user.ruta
+    )
+    
+    user:User;
 }

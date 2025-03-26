@@ -1,4 +1,5 @@
 import { IsPositive, IsNotEmpty, IsOptional, IsBoolean } from "class-validator";
+import { User } from "src/users/entities/user.entity";
 
 export class CreateRutaDto {
 
@@ -9,9 +10,9 @@ export class CreateRutaDto {
     @IsNotEmpty()
     name:string
 
+    @IsOptional()
     @IsBoolean()
     status: string
 
-    @IsOptional()
-    user: string
+    readonly user: User
 }

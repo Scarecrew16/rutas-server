@@ -1,4 +1,5 @@
 import { IsPositive, IsEmail, IsNotEmpty, IsOptional } from "class-validator";
+import { Ruta } from "src/rutas/entities/ruta.entity";
  
 export class CreateUserDto {
     

@@ -1,4 +1,5 @@
-import { Column, DeleteDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Ruta } from "src/rutas/entities/ruta.entity";
+import { Column, DeleteDateColumn, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
 export class User {
@@ -20,4 +21,11 @@ export class User {
 
     @DeleteDateColumn()
     deletedAt: Date;
+
+    @OneToOne(
+        ()=> Ruta,
+        (ruta:Ruta) => ruta.user,
+    )
+    @JoinColumn()
+    ruta:Ruta[];
 }
